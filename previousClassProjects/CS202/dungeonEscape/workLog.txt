@@ -1,0 +1,58 @@
+Landon Boone
+12/4/22/6:00PM
+    Finished the readRoom function, reading in the room name, room desc, has encounters/has visited/is exit
+    roomList.txt syntax:
+        name
+        desc
+        exitDirection exitToRoom
+12/4/22/7:05PM
+    Finished the readEncounter function, reading in the Encounter title, encounter desc, isHostile/maxHealthChange/attackBonusChange/defenseChange
+    encounterList.txt syntax:
+        name
+        desc
+        isHostile check
+        maxHealthChange
+        currentHealthChange
+        attackBonusChange
+        defenseChange
+
+12/4/22/7:32PM
+    Finished the readEnemy function, reading in the Enemy title, Enemy desc, maxHealth/currentHealth/defense/attackBonus
+    enemyList.txt syntax:
+        name
+        desc
+        maxHealth
+        currentHealth
+        attackBonus
+        defense
+12/4/22/8:01PM
+    Finished AIcombat, rollHeal, RollAttack functions
+12/4/22/8:52PM 
+    Implemented room translation, victory condition (reached exit), room-based commands (IE noncombat commands), encounterList rolling into main file.
+    if a player has entered a room for the first time ( besides the beginning room and the exit room) an encounter will be rolled.
+12/4/22/9:58PM
+    Implemeted combat and loss conditions.
+12/4/22/10:49PM
+    debugged issued with rolling random enemies. Implemented random events 1-10
+12/4/22/11:39PM
+    finished implementing the encounter list. beginning to implement a boss fight.
+12/5/22/12:36AM
+    finished implementing the enemy list and adjusting cout phrasing in the boss encounter.
+12/5/22/2:03AM
+    finished implementing roomlist and playtested. Put a limit on enemy heals because the final boss was very annoying.
+12/5/22/2:23AM
+    finished writing comments/reviewing code for errors.
+
+    -----------------------------------------------------
+
+    Writeup:
+        I decided to go with making a dungeon crawler game 
+        because some of my favorite game genres are roguelike exploration games.
+        I am also a big fan of Dungeons and Dragons, and I always draw parallels between
+        exploration-focused dungeon crawlers and D&D.
+
+        In the beginning of this project, I felt as if I bit off more than I could chew.
+        I wasn't sure exactly how to get started with reading three different .txt files into the program and making sure
+        all the stat allocations and event markers ended up where they were supposed to go, much less implementing a combat system.
+        But once I got past the initial hurdles, I was able to understand quickly how to proceed through the project. Interestingly enough,
+        m

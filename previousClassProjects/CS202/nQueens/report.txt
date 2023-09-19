@@ -1,0 +1,27 @@
+
+Potential Solutions with nqueens (n = 8) and time to run:
+count: 16777216             time: 0m0.589s
+
+Potential Solutions with nqueens (n = 10) and time to run:
+count: 1410065408           time: 5m15.856s
+
+Potential Solutions with nqueens2 (n = 8) and time to run:
+count: 2396745              time: 0m0.341s
+
+Potential Solutions with nqueens2 (n = 10) and time to run:
+count: 1111111111           time: 3m13.581s
+
+Using Recursion in the context of creating all the
+possible solutions for the nqueens problem is benificial
+because by creating each board recursively, it massively
+cuts down on runtime of just using loops to create
+all the potential solutions, as when the size of the
+board increases, the number of potential solutions
+increase almost exponentially.
+
+The time efficiency increases largly when constraining the
+search space to only valid potential solutions due to being
+able to cut out a large portion of checked solutions;
+For example, a board with 1 million potential solutions
+can be drastically reduced by calling the Recursion
+to smaller sets that match potential solution parameters.

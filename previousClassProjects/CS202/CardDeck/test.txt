@@ -1,0 +1,46 @@
+void CardDeck::deal(int  *&hand, int size) {
+    srand (time(NULL) );
+    int drawnCardIndex;
+    int drawnCard;
+    int *newHand = new int [size+1];
+    for (int i = 0; i < size; i++) {
+        newHand[i] = hand[i];
+    }
+    delete [] hand;
+    drawnCardIndex = rand() % size;
+    if (deck[drawnCardIndex] == 1) {
+        drawnCard = 11;
+    }
+    else if (deck[drawnCardIndex] == 11 || deck[drawnCardIndex] == 12 || deck[drawnCardIndex] == 13) {
+        drawnCard = 10;
+    }
+    else {
+        drawnCard = deck[drawnCardIndex];
+    }
+    newHand[size] = deck[drawnCard];
+
+
+    hand = newHand;
+    delete [] newHand;
+
+}
+
+
+void CardDeck::deal(int  *&hand, int handSize) {
+    int *newHand = new int [handSize+1];
+    for (int i = 0; i < handSize; i++) {
+        newHand[i] = hand[i];
+    }
+    delete [] hand;
+    hand = newHand;
+    hand[handSize+1] = 999;
+    delete [] newHand;
+
+
+
+    for (int i = 0; i < handSize+1; i++) {
+        std::cout << hand[i] << " ";
+        std::cout << " "<< std::endl;
+    }
+
+}
