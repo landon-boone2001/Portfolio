@@ -1,0 +1,15 @@
+test for vector with find()
+    real    0m7.856s
+    real    0m7.574s
+    real    0m7.585s
+test for vector at max size
+    real    0m9.894s
+    real    0m7.926s
+    real    0m7.728s
+test for vector with binary search
+    real    0m8.086s
+    real    0m8.347s
+    real    0m7.603s
+Load Factor for 2000000 values inputted
+With 2,000,000 values inputted, 148,933 primes were found, giving a load factor 
+of 0.0745

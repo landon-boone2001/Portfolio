@@ -1,0 +1,188 @@
+8
+4
+12
+10
+8
+6
+4
+3
+2
+1
+
+1 2 3 4 5 6 7 8
+0 0 0 0 1 2 3 4
+1 2 3 4 6 9 1 2
+
+    else if (list1.getCount() > list2.getCount()){
+        j = 0;
+        spacing = list1.getCount()-list2.getCount();
+            
+        for (int i = list1.getCount(); i > 0; i--) {
+            if (j > spacing) {
+                if (carry) {
+                    getDigit= list1.getDigit(i)+1;
+                }
+                else {
+                    getDigit= list1.getDigit(i);
+                }
+            }
+            else {
+                if (carry){
+                    getDigit = list1.getDigit(i) + list2.getDigit(i-spacing)+1;
+                }
+                else {
+                    getDigit = list1.getDigit(i) + list2.getDigit(i-spacing);
+                }
+                carry = false;
+                
+                if (getDigit >= 10){
+                    getDigit = getDigit % 10;
+                    carry = true;
+                }
+                if (getDigit>= 10 && i == list1.getCount()){
+
+                }
+                
+            }
+            j++;
+            
+            cout << getDigit << endl;
+
+        }
+            if (carry = true) {
+                getDigit = 1;
+            }
+            cout << getDigit << endl; 
+    }
+
+    return sum;
+}
+
+
+
+    j = 0;
+        k = list1.getCount()-1;
+        spacing = list1.getCount()-list2.getCount();
+            
+        for (int i = list1.getCount()-1; i > 0; i--) {
+            if (j > spacing) {
+                if (carry) {
+                    getDigit= list1.getDigit(i)+1;
+                }
+                else {
+                    getDigit= list1.getDigit(i);
+                }
+            }
+            else {
+                if (carry){
+                    getDigit = list1.getDigit(i) + list2.getDigit(i-spacing)+1;
+                }
+                else {
+                    getDigit = list1.getDigit(i) + list2.getDigit(i-spacing);
+                }
+                carry = false;
+                
+                if (getDigit >= 10){
+                    getDigit = getDigit % 10;
+                    carry = true;
+                }
+                if (getDigit>= 10 && i == list1.getCount()){
+
+                }
+                
+            }
+            j++;
+            
+            cout << getDigit << endl;
+            toSumList[k] = getDigit;
+            k--;
+        }
+            if (carry = true) {
+                getDigit = 1;
+            }
+            cout << getDigit << endl; 
+            toSumList[k] = getDigit;
+            cout << " " << endl;
+            for (int i = 0; i < 8; i++) {
+                cout << toSumList[i] << endl;
+                sum.addNode(toSumList[i]);
+            }
+    delete [] toSumList;
+    }
+
+
+
+
+
+
+    List sumLists(List list1, List list2) {
+    int j;
+    int k;
+    bool carry = false;
+    int spacing;
+    List  sum;
+    int getDigit;
+	//in some while loop:
+	//-iterate through lists starting at the head node
+	//-adding values each iteration and checking for carry
+	//-handle lists of different sizes
+	
+	//then, return the sum in the form of a list
+    if (list1.getCount() == list2.getCount()) {
+        int * toSum = new int [list1.getCount()+1];
+        k = list1.getCount();
+        for (int i = list1.getCount(); i > 0; i--) {
+            if (carry){
+                getDigit = list1.getDigit(i-1)+list2.getDigit(i-1)+1;
+                carry = false;
+            }
+            else {
+                getDigit = list1.getDigit(i-1)+list2.getDigit(i-1);
+            }
+            if (getDigit > 9){
+                carry = true;
+                getDigit = getDigit % 10;
+            }
+            cout << getDigit << endl;
+            toSum[k] = getDigit;
+            k--;
+
+        }
+        
+        if (carry) {
+            getDigit = 1;
+            toSum[k] = getDigit;
+        }
+        if (carry ){
+            for(int i =0; i < list1.getCount()+1; i++) {
+                sum.addNode(toSum[i]);
+            }
+        }
+        else {
+            for(int i = 1; i < list1.getCount()+1; i++) {
+                sum.addNode(toSum[i]);
+            }
+        }
+        delete [] toSum;
+    }
+    else if (list1.getCount() < list2.getCount()){
+        spacing = list2.getCount() - list1.getCount();
+        for (int i = 0; i < list2.getCount() - list1.getCount(); i++) {
+        }
+    }
+    else if (list1.getCount() > list2.getCount()){
+      //  int * toSum = new int [list1.getCount()];
+        List resizedList2;
+        spacing = list1.getCount() - list2.getCount();
+        for (int i = 0; i < spacing; i++) {
+            resizedList2.addNode(0);
+        }
+        for(int i = 0; i < list2.getCount(); i++) {
+            resizedList2.addNode(list2.getDigit(i));
+        }
+        resizedList2.print();
+    }
+        
+    
+    return sum;
+}
