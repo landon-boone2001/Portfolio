@@ -1,3 +1,6 @@
+# 26. Remove Duplicates from Sorted Array
+# Removes duplicates from a pre-sorted array
+# 12/22/23
 class Solution(object):
     def removeDuplicates(self, nums):
         i = 1
